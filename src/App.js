@@ -1,6 +1,7 @@
 import React from "react";
 
 import Temperature from "./components/temperature";
+import Gallery from "./components/gallery";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           alert("1");
         }}
       />
+      <Gallery />
     </div>
   );
 }
