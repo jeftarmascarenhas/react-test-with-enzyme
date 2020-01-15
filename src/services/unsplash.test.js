@@ -13,6 +13,15 @@ describe("Unsplash Service", () => {
     const images = await unsplash("kittens");
     expect(images).toEqual(["cut.jpg"]);
     expect(mockAxios.get).toHaveBeenCalledTimes(1);
+    expect(mockAxios.get).toHaveBeenCalledWith(
+      "https://api.unsplash.com/search/photos",
+      {
+        params: {
+          client_id: process.env.REACT_APP_UNSPLASH_ACCESS_KEY,
+          query: "kittens"
+        }
+      }
+    );
   });
 });
 
