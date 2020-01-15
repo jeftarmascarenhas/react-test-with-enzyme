@@ -12,5 +12,16 @@ describe("Unsplash Service", () => {
     );
     const images = await unsplash("kittens");
     expect(images).toEqual(["cut.jpg"]);
+    expect(mockAxios.get).toHaveBeenCalledTimes(1);
   });
+});
+
+const drinkEach = (fn, arr = []) => {
+  arr.forEach(item => fn(item));
+};
+
+it("Drink func", () => {
+  const drink = jest.fn();
+  drinkEach(drink, ["Lemon", "octopus"]);
+  expect(drink).toHaveBeenCalledTimes(2);
 });
